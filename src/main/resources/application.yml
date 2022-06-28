@@ -1,0 +1,28 @@
+spring:
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: andrewskrynnikov@gmail.com
+    password: lwkqckwoodnrxxlx
+    theme: Пора пить чай!
+    message: Пора пить чай!
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+  datasource:
+    username: ${JDBC_DATABASE_USERNAME:test}
+    password: ${JDBC_DATABASE_PASSWORD:test}
+    url: ${JDBC_DATABASE_URL:jdbc:oracle:thin:@0.0.0.0:1521/orclpdb1}
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+  liquibase:
+    change-log: classpath:db/changelog/db.db.changelog-master.xml
+base:
+  query:
+    get_query: SELECT * FROM emails
+    post_query: INSERT INTO emails (email) VALUES (?)
+    delete_query: DELETE FROM emails where email=?
+  scheduler:
+    cron: 0 53 17 * * 1-5

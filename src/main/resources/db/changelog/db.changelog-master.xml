@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <preConditions>
+        <dbms type="oracle"/>
+    </preConditions>
+
+    <changeSet id="0" author="askrynnikov">
+        <tagDatabase tag="db_init"/>
+    </changeSet>
+
+    <include file="v-1.0/db.change-log-v.1.0.xml" relativeToChangelogFile="true"/>
+
+    <changeSet id="1" author="askrynnikov">
+        <tagDatabase tag="v.1.0"/>
+    </changeSet>
+
+    <include file="v-1.1/db.change-log-v.1.1.xml" relativeToChangelogFile="true"/>
+
+    <changeSet id="4" author="askrynnikov">
+        <tagDatabase tag="v.1.1"/>
+    </changeSet>
+
+</databaseChangeLog>
