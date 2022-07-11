@@ -21,6 +21,16 @@ public class EmailDAOImpl implements EmailDAO {
     @Value("${base.query.delete_query}")
     private String delete_query;
 
+    public void set_get_query(String get_query) {
+        this.get_query = get_query;
+    }
+    public void set_post_query(String post_query) {
+        this.post_query = post_query;
+    }
+    public void set_delete_query(String delete_query) {
+        this.delete_query = delete_query;
+    }
+
     @Autowired
     private DataSource dataSource;
 

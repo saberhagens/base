@@ -19,10 +19,11 @@ spring:
     driver-class-name: oracle.jdbc.driver.OracleDriver
   liquibase:
     change-log: classpath:db/changelog/db.db.changelog-master.xml
+    enabled: false
 base:
   query:
     get_query: SELECT * FROM emails
     post_query: INSERT INTO emails (email) VALUES (?)
     delete_query: DELETE FROM emails where email=?
   scheduler:
-    cron: 0 53 17 * * 1-5
+    cron: 0 0 17 * * 1-5
